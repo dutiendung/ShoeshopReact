@@ -1,0 +1,100 @@
+.wrapper {
+    height: var(--default-layout-header-height);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.inner {
+    height: 100%;
+    width: 1455px;
+    display: flex;
+    justify-content: space-between;
+}
+.inner .logo {
+    font-size: 30px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        color: bisque;
+        opacity: 0.7;
+        font-size: 33px;
+        transition: 0.3s;
+    }
+}
+.inner .nav {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+.nav li {
+    margin-left: 24px;
+    :hover {
+        font-size: 20px;
+        transition: 0.3s;
+    }
+}
+.link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.inner .feature {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    width: 300px;
+    justify-content: flex-end;
+}
+.feature .link {
+    transition: all 2s;
+    margin-left: 22px;
+    :hover {
+        opacity: 0.7;
+        transition: 0.2s;
+        font-size: 22px;
+    }
+}
+
+.feature .link:last-child {
+    display: flex;
+    align-items: center;
+    border: none;
+    &:hover input {
+        display: inline;
+        margin-right: 11px;
+        width: 200px;
+        border-radius: 999px;
+        padding: 20px 10px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+.feature .link input {
+    display: none;
+    animation: transition 0.5s;
+    transition: all 0.5s;
+}
+
+.feature .disable {
+}
+.active {
+    border-bottom: 3px var(--primary) solid;
+}
+.hidden {
+    display: none;
+}
+//animation
+@keyframes transition {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 200px;
+    }
+}

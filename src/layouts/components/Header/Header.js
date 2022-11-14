@@ -1,14 +1,11 @@
 import classNames from 'classnames/bind';
 import { Link, NavLink } from 'react-router-dom';
-import style from './Header.module.scss';
 import config from '~/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faUser,
-    faMagnifyingGlass,
-    faCartShopping,
-} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import style from './Header.module.scss';
+import Search from '../Search';
 const cx = classNames.bind(style);
 function Header() {
     const [home, setHome] = useState(true);
@@ -89,21 +86,7 @@ function Header() {
                         <FontAwesomeIcon icon={faCartShopping} />
                     </Link>
 
-                    <Link
-                        className={cx('link')}
-                        onMouseOver={() => {
-                            setHiddenFeature('hidden');
-                        }}
-                        onMouseOut={() => {
-                            setHiddenFeature(undefined);
-                        }}
-                    >
-                        <input></input>
-                        <FontAwesomeIcon
-                            className={cx('search')}
-                            icon={faMagnifyingGlass}
-                        />
-                    </Link>
+                    <Search setHiddenFeature={setHiddenFeature} />
                 </div>
             </div>
         </header>

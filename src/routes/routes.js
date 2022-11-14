@@ -6,6 +6,7 @@ import Contact from '~/pages/Contact';
 import Cart from '~/pages/Cart';
 import Login from '~/pages/Login/Login';
 import Register from '~/pages/Register';
+import Search from '~/pages/Search';
 const puplicRoutes = [
     {
         path: config.routes.home,
@@ -30,6 +31,10 @@ const puplicRoutes = [
     {
         path: config.routes.register,
         component: Register,
+    },
+    {
+        path: config.routes.search,
+        component: Search,
     },
 ];
 const privateRoutes = [];

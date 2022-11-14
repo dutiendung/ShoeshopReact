@@ -5,9 +5,9 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
     border-radius: 5px;
     padding: 30px;
+    margin-top: calc(var(--default-layout-header-height) + 60px);
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
 }
 .userIcon {

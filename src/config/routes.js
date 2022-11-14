@@ -5,5 +5,6 @@ const routes = {
     cart: '/cart',
     login: '/login',
     register: '/register',
+    search: '/search',
 };
 export default routes;

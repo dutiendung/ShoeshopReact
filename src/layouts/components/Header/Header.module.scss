@@ -4,6 +4,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    position: fixed;
+    background-color: var(--white);
+    z-index: 9999;
 }
 .inner {
     height: 100%;
@@ -59,42 +62,9 @@
         font-size: 22px;
     }
 }
-
-.feature .link:last-child {
-    display: flex;
-    align-items: center;
-    border: none;
-    &:hover input {
-        display: inline;
-        margin-right: 11px;
-        width: 200px;
-        border-radius: 999px;
-        padding: 20px 10px;
-        height: 30px;
-        font-size: 16px;
-    }
-}
-
-.feature .link input {
-    display: none;
-    animation: transition 0.5s;
-    transition: all 0.5s;
-}
-
-.feature .disable {
-}
 .active {
     border-bottom: 3px var(--primary) solid;
 }
 .hidden {
     display: none;
-}
-//animation
-@keyframes transition {
-    from {
-        width: 0px;
-    }
-    to {
-        width: 200px;
-    }
 }

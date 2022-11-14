@@ -15,7 +15,7 @@ function Login() {
                 <input type={'submit'} value={'Đăng nhập'} />
             </form>
             <div className={cx('register')}>
-                Bạn đã có tài khoản? <Link to={'/register'}>Đăng nhập</Link>
+                Bạn đã có tài khoản? <Link to={'/login'}>Đăng nhập</Link>
             </div>
         </div>
     );

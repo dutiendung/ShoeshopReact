@@ -14,26 +14,26 @@ const cx = classNames.bind(style);
 function Search({ setHiddenFeature }) {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
+    const [stateSearch, setStateSearch] = useState();
     const handleChange = (e) => {
         const searchValue = e.target.value;
         if (!searchValue.startsWith(' ')) {
             setSearchValue(searchValue);
         }
     };
-    const debouncedValue = useDebounce(searchValue, 500);
 
     useEffect(() => {
-        if (!debouncedValue.trim()) {
-            setSearchResult([]);
-            return;
-        }
-
         const fetchApi = async () => {
-            const result = await searchService(debouncedValue);
+            const result = await searchService(searchValue);
             setSearchResult(result);
         };
         fetchApi();
-    }, [debouncedValue]);
+    }, [stateSearch]);
+    const handleSearch = () => {
+        setStateSearch((...prev) => {
+            return prev + 1;
+        });
+    };
     return (
         <div
             className={cx('wrapper')}
@@ -50,7 +50,10 @@ function Search({ setHiddenFeature }) {
                 onChange={handleChange}
             />
             <Link className={cx('link')} to={config.routes.search}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    onClick={handleSearch}
+                />
             </Link>
         </div>
     );

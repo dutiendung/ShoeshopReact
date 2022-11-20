@@ -5,15 +5,18 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import ProductCard from '~/components/ProductCard';
-import productService from '~/services/productService';
+import productService from '~/services/productsService';
 import style from './Home.module.scss';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 const cx = classNames.bind(style);
 
 function Home() {
     document.title = 'DStore | Mua Online Giày Thời Trang';
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        productService()
+        productService
+            .getAll()
             .then((data) => {
                 setProducts(data);
             })
@@ -68,18 +71,21 @@ function Home() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('shockDiscount')}>
-                <div className={cx('title')}>Giảm giá sốc</div>
+                <div className={cx('title')}>
+                    <div className={cx('label')}>Giảm giá sốc</div>
+                    <Link className={cx('seeAll')} to={config.routes.products}>
+                        ...Xem tất cả
+                    </Link>
+                </div>
                 <div className={cx('products')}>
                     <Slider {...sliderSettings}>
                         {products.map((product) => {
                             if (product.promotionPercent >= 25) {
                                 return (
-                                    <div>
-                                        <ProductCard
-                                            key={product.id}
-                                            data={product}
-                                        />
-                                    </div>
+                                    <ProductCard
+                                        key={product.id}
+                                        data={product}
+                                    />
                                 );
                             }
                         })}
@@ -87,11 +93,19 @@ function Home() {
                 </div>
             </div>
             <div className={cx('otherProducts')}>
-                <div className={cx('title')}>Các sảm phẩm khác</div>
+                <div className={cx('title')}>
+                    <div className={cx('label')}>Sảm phẩm khác</div>
+                    <Link className={cx('seeAll')} to={config.routes.products}>
+                        ...Xem tất cả
+                    </Link>
+                </div>
                 <div className={cx('products')}>
                     <Slider {...sliderSettings}>
                         {products.map((product) => {
-                            if (product.promotionPercent < 25) {
+                            if (
+                                product.promotionPercent < 25 ||
+                                product.promotionPercent === false
+                            ) {
                                 return (
                                     <ProductCard
                                         key={product.id}

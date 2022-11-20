@@ -2,6 +2,11 @@
     margin-bottom: 80px;
 }
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title .label {
     font-size: 20px;
     font-weight: 800;
     background-color: var(--primary);
@@ -9,7 +14,7 @@
     margin-bottom: 20px;
     margin-top: 50px;
 }
-.title::after {
+.title .label::after {
     border-bottom: 15px solid transparent;
     border-left: 30px solid var(--primary);
     border-top: 15px solid transparent;
@@ -17,4 +22,10 @@
     height: 0;
     position: absolute;
     width: 0;
+}
+.title .seeAll {
+    color: #000;
+}
+.products {
+    min-height: 400px;
 }

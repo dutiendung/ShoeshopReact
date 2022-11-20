@@ -1,0 +1,8 @@
+// override
+.MuiPagination-ul {
+    display: flex;
+    justify-content: center;
+}
+.MuiButtonBase-root {
+    font-size: 14px !important;
+}

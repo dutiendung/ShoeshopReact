@@ -1,0 +1,25 @@
+.wrapper {
+    margin-top: var(--default-layout-header-height);
+}
+.wrapper .about {
+    margin-bottom: 30px;
+}
+.title {
+    font-size: 20px;
+    line-height: 1.75rem;
+    font-weight: 700;
+    margin-top: 95px;
+    margin-bottom: 15px;
+}
+.content {
+    display: flex;
+}
+.productFilter {
+    width: 300px;
+}
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 400px;
+}

@@ -1,0 +1,15 @@
+.checkbox-container {
+    margin: 3px 0;
+}
+.checkmark {
+    background-color: #fff;
+    border: 0.5px solid #000;
+    height: 0.875rem;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-translate: 0 -0.5rem;
+    -ms-translate: 0 -0.5rem;
+    translate: 0 -0.5rem;
+    width: 0.875rem;
+}

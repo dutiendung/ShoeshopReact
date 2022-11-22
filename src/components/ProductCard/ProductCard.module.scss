@@ -34,11 +34,21 @@
     margin-left: 10px;
     cursor: pointer;
 }
+.addToCart .icon {
+    margin-left: 5px;
+    &:hover {
+        opacity: 0.7;
+    }
+}
 .detail {
     margin-right: 10px;
     cursor: pointer;
     padding: 0 5px;
     border-left: 1px solid #000;
+    color: #000;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 .productName {
     margin-top: 5px;

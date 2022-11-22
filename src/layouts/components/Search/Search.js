@@ -52,7 +52,7 @@ function Search({ setHiddenFeature }) {
             <Link className={cx('link')} to={config.routes.search}>
                 <FontAwesomeIcon
                     icon={faMagnifyingGlass}
-                    onClick={handleSearch}
+                    // onClick={handleSearch}
                 />
             </Link>
         </div>

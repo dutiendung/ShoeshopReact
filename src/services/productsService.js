@@ -8,6 +8,14 @@ const productService = {
             console.log(error);
         }
     },
+    async get(id) {
+        try {
+            const res = await httpRequest.get(`products/${id}`);
+            return res.data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
     async getFilter({ _page, _limit, _sort, _order, category, color, size }) {
         try {
             const res = await httpRequest.get('products', {

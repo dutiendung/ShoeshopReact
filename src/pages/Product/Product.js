@@ -11,6 +11,7 @@ function Product() {
     document.title = 'DStore | Sảm phẩm';
     const [filters, setFilters] = useState({
         filterCategoryIds: [],
+        color: [],
         sizes: [],
     });
     const [page, setPage] = useState(1);

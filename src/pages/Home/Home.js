@@ -102,10 +102,7 @@ function Home() {
                 <div className={cx('products')}>
                     <Slider {...sliderSettings}>
                         {products.map((product) => {
-                            if (
-                                product.promotionPercent < 25 ||
-                                product.promotionPercent === false
-                            ) {
+                            if (product.promotionPercent < 25) {
                                 return (
                                     <ProductCard
                                         key={product.id}

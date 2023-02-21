@@ -5,7 +5,9 @@ import style from './Product.module.scss';
 import ProductFilter from './Components/ProductFilter';
 import productService from '~/services/productsService';
 import './Pagination.scss';
+
 import ProductCard from '~/components/ProductCard';
+import ProductLoading from './ProductLoading';
 const cx = classNames.bind(style);
 function Product() {
     document.title = 'DStore | Sảm phẩm';
@@ -15,11 +17,10 @@ function Product() {
         sizes: [],
     });
     const [page, setPage] = useState(1);
-
     const [order, setOrder] = useState('asc');
     const [filterProductList, setFilterProductList] = useState([]);
     const [totalPage, setTotalPage] = useState(6);
-
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         productService
             .getFilter({
@@ -33,6 +34,7 @@ function Product() {
             })
             .then((data) => {
                 setFilterProductList(data);
+                setLoading(false);
             });
     }, [page, order, filters]);
 
@@ -45,7 +47,9 @@ function Product() {
     const handleChangePage = (e, page) => {
         setPage(page);
     };
-    return (
+    return loading ? (
+        <ProductLoading />
+    ) : (
         <div className={cx('wrapper')}>
             <div className={cx('about')}>
                 <div className={cx('title')}>For You</div>

@@ -1,0 +1,16 @@
+.wrapper {
+    margin-top: calc(var(--default-layout-header-height) + 120px);
+    display: flex;
+}
+.first {
+    width: 300px;
+}
+.second {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.item {
+    margin-left: 50px;
+    margin-bottom: 25px;
+}

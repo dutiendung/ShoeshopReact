@@ -3,21 +3,27 @@ import { useEffect, useState } from 'react';
 import productService from '~/services/productsService';
 import { useParams } from 'react-router-dom';
 import style from './ProductDetail.module.scss';
+
+import ProductDetailLoading from './ProductDetailLoading';
 const cx = classNames.bind(style);
 function ProductDetail() {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         productService
             .get(id)
             .then((data) => {
                 setProduct(data);
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
-    return (
+    return loading ? (
+        <ProductDetailLoading />
+    ) : (
         <div className={cx('wrapper')}>
             <div className={cx('productImg')}>
                 <img src={product.image} />
@@ -32,13 +38,13 @@ function ProductDetail() {
                     {new Intl.NumberFormat('vi-VN', {
                         style: 'currency',
                         currency: 'VND',
-                    }).format(product.originalPrice)}
+                    }).format(product.salePrice)}
 
                     <span className={cx('originalPrice')}>
                         {new Intl.NumberFormat('vi-VN', {
                             style: 'currency',
                             currency: 'VND',
-                        }).format(product.salePrice)}
+                        }).format(product.originalPrice)}
                     </span>
                 </div>
                 <div className={cx('quantity')}>

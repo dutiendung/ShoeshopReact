@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import ProductCard from '~/components/ProductCard';
 import productService from '~/services/productsService';
+import HomeLoading from './HomeLoading';
 import style from './Home.module.scss';
 import { Link } from 'react-router-dom';
 import config from '~/config';
@@ -14,11 +15,13 @@ const cx = classNames.bind(style);
 function Home() {
     document.title = 'DStore | Mua Online Giày Thời Trang';
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         productService
             .getAll()
             .then((data) => {
                 setProducts(data);
+                setLoading(false);
             })
             .catch((error) => console.log(error));
     }, []);
@@ -64,7 +67,7 @@ function Home() {
         slidesToScroll: 2,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
     };
 
@@ -78,18 +81,22 @@ function Home() {
                     </Link>
                 </div>
                 <div className={cx('products')}>
-                    <Slider {...sliderSettings}>
-                        {products.map((product) => {
-                            if (product.promotionPercent >= 25) {
-                                return (
-                                    <ProductCard
-                                        key={product.id}
-                                        data={product}
-                                    />
-                                );
-                            }
-                        })}
-                    </Slider>
+                    {loading ? (
+                        <HomeLoading />
+                    ) : (
+                        <Slider {...sliderSettings}>
+                            {products.map((product) => {
+                                if (product.promotionPercent >= 25) {
+                                    return (
+                                        <ProductCard
+                                            key={product.id}
+                                            data={product}
+                                        />
+                                    );
+                                }
+                            })}
+                        </Slider>
+                    )}
                 </div>
             </div>
             <div className={cx('otherProducts')}>
@@ -100,18 +107,22 @@ function Home() {
                     </Link>
                 </div>
                 <div className={cx('products')}>
-                    <Slider {...sliderSettings}>
-                        {products.map((product) => {
-                            if (product.promotionPercent < 25) {
-                                return (
-                                    <ProductCard
-                                        key={product.id}
-                                        data={product}
-                                    />
-                                );
-                            }
-                        })}
-                    </Slider>
+                    {loading ? (
+                        <HomeLoading />
+                    ) : (
+                        <Slider {...sliderSettings}>
+                            {products.map((product) => {
+                                if (product.promotionPercent < 25) {
+                                    return (
+                                        <ProductCard
+                                            key={product.id}
+                                            data={product}
+                                        />
+                                    );
+                                }
+                            })}
+                        </Slider>
+                    )}
                 </div>
             </div>
         </div>

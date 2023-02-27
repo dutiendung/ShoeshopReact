@@ -3,9 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 import config from '~/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {
+    faUser,
+    faCartShopping,
+    faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
 import style from './Header.module.scss';
-import Search from '../Search';
+import Search from '../../../pages/Search';
 const cx = classNames.bind(style);
 function Header() {
     const [home, setHome] = useState(true);
@@ -86,7 +90,12 @@ function Header() {
                         <FontAwesomeIcon icon={faCartShopping} />
                     </Link>
 
-                    <Search setHiddenFeature={setHiddenFeature} />
+                    <Link
+                        className={cx('link', 'search')}
+                        to={config.routes.search}
+                    >
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </Link>
                 </div>
             </div>
         </header>

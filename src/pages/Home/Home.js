@@ -85,7 +85,7 @@ function Home() {
                         <HomeLoading />
                     ) : (
                         <Slider {...sliderSettings}>
-                            {products.map((product) => {
+                            {products?.map((product) => {
                                 if (product.promotionPercent >= 25) {
                                     return (
                                         <ProductCard
@@ -111,7 +111,7 @@ function Home() {
                         <HomeLoading />
                     ) : (
                         <Slider {...sliderSettings}>
-                            {products.map((product) => {
+                            {products?.map((product) => {
                                 if (product.promotionPercent < 25) {
                                     return (
                                         <ProductCard

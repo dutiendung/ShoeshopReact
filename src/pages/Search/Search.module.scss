@@ -42,7 +42,7 @@
     height: 100px;
 }
 .searchResult,
-.searchResult div {
+.resultItem {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -53,6 +53,7 @@
 }
 .totalResult {
     margin-left: -27px;
+    margin-bottom: 38px;
 }
 //animation
 @keyframes transition {

@@ -1,9 +1,52 @@
 .wrapper {
-    margin-top: 100px;
     height: 323px;
-    border: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .inner {
     width: 1455px;
+}
+.func {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+}
+.func .title {
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.func .methodPayment a {
+    margin-left: 10px;
+}
+.func .methodPayment img {
+    width: 30px;
+}
+.term {
+    margin-bottom: 50px;
+}
+.term .item {
+    display: flex;
+    flex-direction: column;
+}
+.term a {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+        text-decoration-line: underline;
+    }
+}
+.contact a {
+    color: #000;
+    text-decoration: none;
+    &:hover {
+        text-decoration-line: underline;
+    }
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }

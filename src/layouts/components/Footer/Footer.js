@@ -1,13 +1,66 @@
 import classNames from 'classnames/bind';
 
 import style from './Footer.module.scss';
+import logoMomo from '~/assets/img-footer/methodPayment/momo.png';
+import logoVisa from '~/assets/img-footer/methodPayment/visa.jpg';
+import logoMastercard from '~/assets/img-footer/methodPayment/mastercard.png';
+import logoVnpay from '~/assets/img-footer/methodPayment/vnpay.png';
+import logoZalopay from '~/assets/img-footer/methodPayment/zalopay.png';
 const cx = classNames.bind(style);
 function Footer() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('contact')}></div>
-                <div className={cx('copyright')}></div>
+                <div className={cx('func')}>
+                    <div className={cx('methodPayment')}>
+                        <div className={cx('title')}>
+                            PHƯƠNG THỨC THANH TOÁN
+                        </div>
+                        <a href="#">
+                            <img src={logoMomo}></img>
+                        </a>
+                        <a href="#">
+                            <img src={logoVisa}></img>
+                        </a>
+                        <a href="#">
+                            <img src={logoMastercard}></img>
+                        </a>
+                        <a href="#">
+                            <img src={logoVnpay}></img>
+                        </a>
+                        <a href="#">
+                            <img src={logoZalopay}></img>
+                        </a>
+                    </div>
+                    <div className={cx('term')}>
+                        <div className={cx('title')}>CHÍNH SÁCH</div>
+                        <di className={cx('item')}>
+                            <a href="#">Chính sách bảo mật</a>
+                            <a href="#">Chính sách vận chuyển</a>
+                            <a href="#">Chính sách đổi trả, bảo hành</a>
+                        </di>
+                    </div>
+                    <div className={cx('contact')}>
+                        <div className={cx('title')}>CONTACT INFO</div>
+                        <div className={cx('item')}>
+                            <div>Phước Long B, TP Thủ Đức, TP Hồ Chí Minh</div>
+                            <div>
+                                <a href="tel:0333499548">0333499548</a>
+                            </div>
+                            <div>
+                                <a href="mailto:dungtiendtd@gmail.com">
+                                    dungtiendtd@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={cx('copyright')}>
+                    <div>
+                        Copyright ©2023 All rights reserved | This template is
+                        made with by Du Tien Dung
+                    </div>
+                </div>
             </div>
         </div>
     );

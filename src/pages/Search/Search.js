@@ -75,6 +75,7 @@ function Search({ setHiddenFeature }) {
                                 );
                             })}
                         </div>
+                        <a href="#">Lên đầu trang</a>
                     </>
                 )}
             </div>

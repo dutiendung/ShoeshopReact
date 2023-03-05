@@ -6,6 +6,13 @@ import logoVisa from '~/assets/img-footer/methodPayment/visa.jpg';
 import logoMastercard from '~/assets/img-footer/methodPayment/mastercard.png';
 import logoVnpay from '~/assets/img-footer/methodPayment/vnpay.png';
 import logoZalopay from '~/assets/img-footer/methodPayment/zalopay.png';
+import {
+    faLocationDot,
+    faPhone,
+    faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const cx = classNames.bind(style);
 function Footer() {
     return (
@@ -43,11 +50,22 @@ function Footer() {
                     <div className={cx('contact')}>
                         <div className={cx('title')}>CONTACT INFO</div>
                         <div className={cx('item')}>
-                            <div>Phước Long B, TP Thủ Đức, TP Hồ Chí Minh</div>
                             <div>
+                                <i>
+                                    <FontAwesomeIcon icon={faLocationDot} />
+                                </i>
+                                Phước Long B, TP Thủ Đức, TP Hồ Chí Minh
+                            </div>
+                            <div>
+                                <i>
+                                    <FontAwesomeIcon icon={faPhone} />
+                                </i>
                                 <a href="tel:0333499548">0333499548</a>
                             </div>
                             <div>
+                                <i>
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </i>
                                 <a href="mailto:dungtiendtd@gmail.com">
                                     dungtiendtd@gmail.com
                                 </a>

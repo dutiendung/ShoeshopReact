@@ -1,6 +1,6 @@
 .wrapper {
     width: 352px;
-    height: 400px;
+    height: 405px;
     border: 1px solid #ccc;
     padding: 0 10px;
     &:hover {
@@ -56,11 +56,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.price {
+
+.originalPrice {
     font-weight: 600;
     display: inline-block;
 }
-.sale {
+.salePrice {
     margin-left: 8px;
     background-color: rgb(254 240 138);
 }

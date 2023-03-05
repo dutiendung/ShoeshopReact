@@ -24,12 +24,16 @@ function ProductCard({ data = {} }) {
             </div>
             <div className={cx('productName')}>{data.title}</div>
             <div className={cx('price')}>
-                {new Intl.NumberFormat('vi-VN', {
-                    style: 'currency',
-                    currency: 'VND',
-                }).format(data.originalPrice)}
+                <div className={cx('originalPrice')}>
+                    {new Intl.NumberFormat('vi-VN', {
+                        style: 'currency',
+                        currency: 'VND',
+                    }).format(data.originalPrice)}
+                </div>
+                <span className={cx('salePrice')}>
+                    {data.promotionPercent} %
+                </span>
             </div>
-            <span className={cx('sale')}>{data.promotionPercent} %</span>
         </div>
     );
 }

@@ -41,7 +41,6 @@
 .buttonSearch {
     height: 100px;
 }
-.searchResult,
 .resultItem {
     display: flex;
     justify-content: space-around;
@@ -52,6 +51,8 @@
     margin-left: -27px;
 }
 .totalResult {
+    display: flex;
+    justify-content: center;
     margin-left: -27px;
     margin-bottom: 38px;
 }

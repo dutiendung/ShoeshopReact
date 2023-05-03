@@ -84,10 +84,11 @@ function Header() {
                         <FontAwesomeIcon icon={faUser} />
                     </Link>
                     <Link
-                        className={cx('link', hiddenFeature)}
+                        className={cx('link', hiddenFeature, 'cart')}
                         to={config.routes.cart}
                     >
                         <FontAwesomeIcon icon={faCartShopping} />
+                        <span className={cx('total-item')}>0</span>
                     </Link>
 
                     <Link

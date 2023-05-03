@@ -59,7 +59,9 @@ function Search({ setHiddenFeature }) {
             </div>
             <div className={cx('searchResult')}>
                 {searchResult.length == 0 ? (
-                    <div>Không có kết quả nào hãy thử nhập từ khóa khác</div>
+                    <div className={cx('totalResult')}>
+                        Không có kết quả nào hãy thử nhập từ khóa khác
+                    </div>
                 ) : (
                     <>
                         <div className={cx('totalResult')}>
@@ -75,7 +77,6 @@ function Search({ setHiddenFeature }) {
                                 );
                             })}
                         </div>
-                        <a href="#">Lên đầu trang</a>
                     </>
                 )}
             </div>

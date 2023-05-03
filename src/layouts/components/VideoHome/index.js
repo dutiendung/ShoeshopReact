@@ -6,6 +6,7 @@ function VideoHome() {
             src={video}
             autoPlay
             muted
+            loop
             style={{ width: '100%', marginTop: '80px' }}
         ></video>
     );

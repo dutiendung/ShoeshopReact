@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import VideoHome from '~/layouts/components/VideoHome';
 import ProductCard from '~/components/ProductCard';
 import productService from '~/services/productsService';
 import HomeLoading from './HomeLoading';
@@ -73,6 +74,7 @@ function Home() {
 
     return (
         <div className={cx('wrapper')}>
+            <VideoHome />
             <div className={cx('shockDiscount')}>
                 <div className={cx('title')}>
                     <div className={cx('label')}>Giảm giá sốc</div>

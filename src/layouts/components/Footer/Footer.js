@@ -41,11 +41,11 @@ function Footer() {
                     </div>
                     <div className={cx('term')}>
                         <div className={cx('title')}>CHÍNH SÁCH</div>
-                        <di className={cx('item')}>
+                        <div className={cx('item')}>
                             <a href="#">Chính sách bảo mật</a>
                             <a href="#">Chính sách vận chuyển</a>
                             <a href="#">Chính sách đổi trả, bảo hành</a>
-                        </di>
+                        </div>
                     </div>
                     <div className={cx('contact')}>
                         <div className={cx('title')}>CONTACT INFO</div>

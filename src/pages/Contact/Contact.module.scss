@@ -1,5 +1,6 @@
 .wrapper {
     margin-top: var(--default-layout-header-height);
+    margin-bottom: 50px;
 }
 .wrapper .title {
     margin: calc(var(--default-layout-header-height) + 30px) 0 30px 0;
@@ -8,11 +9,12 @@
 p {
     margin: 20px 0;
 }
-p > a {
+.wrapper a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
     margin-left: 3px;
-    color: var(--primary);
+    color: crimson;
+
     &:hover {
         text-decoration: underline;
     }
@@ -32,7 +34,7 @@ textarea {
     height: 50px;
     padding: 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 2px;
     border: 1px solid #ccc;
     &:focus {
         outline-color: var(--primary);
@@ -49,15 +51,15 @@ textarea {
 .submit input[type='submit'] {
     width: 200px;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 2px;
     outline: none;
     border: none;
     background-color: var(--primary);
-    color: var(--white);
     font-size: 17px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
     &:hover {
         opacity: 0.7;
         cursor: pointer;
-        color: var(--black);
     }
 }

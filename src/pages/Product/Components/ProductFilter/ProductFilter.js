@@ -1,47 +1,35 @@
-import classNames from 'classnames/bind';
-import CategoryFilter from '../CategoryFilter';
-import ColorFilter from '../ColorFilter';
-import SizeFilter from '../SizeFilter';
-import style from './ProductFilter.module.scss';
-const cx = classNames.bind(style);
-function ProductFilter({ filter, onChange }) {
+import classNames from 'classnames/bind'
+import CategoryFilter from '../CategoryFilter'
+import ColorFilter from '../ColorFilter'
+import SizeFilter from '../SizeFilter'
+import style from './ProductFilter.module.scss'
+const cx = classNames.bind(style)
+function ProductFilter({ onChange }) {
     const handleCategoryChange = (filterCategoryIds) => {
-        const newFilter = {
-            ...filter,
-            filterCategoryIds,
-        };
-        onChange(newFilter);
-    };
+        onChange({ filterCategoryIds })
+    }
     const handleSizeChange = (sizes) => {
-        const newFilter = {
-            ...filter,
-            sizes,
-        };
-        onChange(newFilter);
-    };
+        onChange({ sizes })
+    }
     const handleColorChange = (colors) => {
-        const newFilter = {
-            ...filter,
-            colors,
-        };
-        onChange(newFilter);
-    };
+        onChange({ colors })
+    }
     return (
         <div className={cx('wrapper')}>
             <div className={cx('filterItem')}>
                 <div className={cx('title')}>Danh mục</div>
-                <CategoryFilter onChange={handleCategoryChange} />
+                <CategoryFilter onChangeCategory={handleCategoryChange} />
             </div>
             <div className={cx('filterItem')}>
                 <div className={cx('title')}>Kích thước</div>
-                <SizeFilter onChange={handleSizeChange} />
+                <SizeFilter onChangeSize={handleSizeChange} />
             </div>
             <div className={cx('filterItem')}>
                 <div className={cx('title')}>Màu sắc</div>
-                <ColorFilter onChange={handleColorChange} />
+                <ColorFilter onChangeColor={handleColorChange} />
             </div>
         </div>
-    );
+    )
 }
 
-export default ProductFilter;
+export default ProductFilter

@@ -1,18 +1,19 @@
 .wrapper {
-    margin-bottom: 80px;
+    width: 1455px;
+    margin: 0 auto;
+    margin-bottom: 100px;
 }
 .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 100px;
 }
 .title .label {
     font-size: 20px;
     font-weight: 800;
     background-color: var(--primary);
     display: inline-block;
-    margin-bottom: 20px;
-    margin-top: 50px;
 }
 .title .label::after {
     border-bottom: 15px solid transparent;

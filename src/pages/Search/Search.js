@@ -1,34 +1,31 @@
-import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames/bind'
+import { useEffect, useState } from 'react'
 
-import PageSearch from '~/pages/Search';
-import style from './Search.module.scss';
-import searchService from '~/services/searchService';
-import { useDebounce } from '~/hooks';
-import config from '~/config';
-import ProductCard from '~/components/ProductCard';
-const cx = classNames.bind(style);
-function Search({ setHiddenFeature }) {
-    const [searchValue, setSearchValue] = useState('');
-    const [searchResult, setSearchResult] = useState([]);
-    const debouncedValue = useDebounce(searchValue, 500);
+import ProductCard from '~/components/ProductCard'
+import { useDebounce } from '~/hooks'
+import searchService from '~/services/searchService'
+import style from './Search.module.scss'
+const cx = classNames.bind(style)
+function Search() {
+    const [searchValue, setSearchValue] = useState('')
+    const [searchResult, setSearchResult] = useState([])
+    const debouncedValue = useDebounce(searchValue, 500)
     // const [stateSearch, setStateSearch] = useState();
 
     useEffect(() => {
         if (!debouncedValue.trim()) {
-            setSearchResult([]);
-            return;
+            setSearchResult([])
+            return
         }
         const fetchApi = async () => {
-            const result = await searchService(searchValue);
-            setSearchResult(result);
+            const result = await searchService(searchValue)
+            setSearchResult(result)
             // console.log(searchResult);
-        };
-        fetchApi();
-    }, [debouncedValue]);
+        }
+        fetchApi()
+    }, [debouncedValue])
 
     // const handleSearch = () => {
     //     setStateSearch((...prev) => {
@@ -36,11 +33,11 @@ function Search({ setHiddenFeature }) {
     //     });
     // };
     const handleChange = (e) => {
-        const searchValue = e.target.value;
+        const searchValue = e.target.value
         if (!searchValue.startsWith(' ')) {
-            setSearchValue(searchValue);
+            setSearchValue(searchValue)
         }
-    };
+    }
     return (
         <div className={cx('wrapper')}>
             <div className={cx('buttonSearch')}>
@@ -58,7 +55,7 @@ function Search({ setHiddenFeature }) {
                 </div>
             </div>
             <div className={cx('searchResult')}>
-                {searchResult.length == 0 ? (
+                {searchResult.length === 0 ? (
                     <div className={cx('totalResult')}>
                         Không có kết quả nào hãy thử nhập từ khóa khác
                     </div>
@@ -74,14 +71,14 @@ function Search({ setHiddenFeature }) {
                                         key={result.id}
                                         data={result}
                                     />
-                                );
+                                )
                             })}
                         </div>
                     </>
                 )}
             </div>
         </div>
-    );
+    )
 }
 
-export default Search;
+export default Search

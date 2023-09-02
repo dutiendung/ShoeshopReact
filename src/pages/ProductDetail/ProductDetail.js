@@ -1,26 +1,27 @@
-import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
-import productService from '~/services/productsService';
-import { useParams } from 'react-router-dom';
-import style from './ProductDetail.module.scss';
+import classNames from 'classnames/bind'
+import { useEffect, useState } from 'react'
+import productService from '~/services/productsService'
+import { useParams } from 'react-router-dom'
+import style from './ProductDetail.module.scss'
 
-import ProductDetailLoading from './ProductDetailLoading';
-const cx = classNames.bind(style);
+import ProductDetailLoading from './ProductDetailLoading'
+const cx = classNames.bind(style)
 function ProductDetail() {
-    const { id } = useParams();
-    const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { id } = useParams()
+    const [product, setProduct] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
+        window.scrollTo(0, 0)
         productService
             .get(id)
             .then((data) => {
-                setProduct(data);
-                setLoading(false);
+                setProduct(data)
+                setLoading(false)
             })
             .catch((error) => {
-                console.log(error);
-            });
-    }, []);
+                console.log(error)
+            })
+    }, [])
     return loading ? (
         <ProductDetailLoading />
     ) : (
@@ -58,7 +59,7 @@ function ProductDetail() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default ProductDetail;
+export default ProductDetail

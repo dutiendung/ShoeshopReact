@@ -1,18 +1,13 @@
-import config from '~/config';
+import config from '~/config'
 
-import Home from '~/pages/Home';
-import Product from '~/pages/Product';
-import Contact from '~/pages/Contact';
-import Cart from '~/pages/Cart/Cart';
-import Login from '~/pages/Login/Login';
-import Register from '~/pages/Register';
-import Search from '~/pages/Search';
-import ProductDetail from '~/pages/ProductDetail';
-const puplicRoutes = [
-    {
-        path: config.routes.home,
-        component: Home,
-    },
+import Product from '~/pages/Product'
+import Contact from '~/pages/Contact'
+import Cart from '~/pages/Cart/Cart'
+import Login from '~/pages/Login/Login'
+import Register from '~/pages/Register'
+import Search from '~/pages/Search'
+import ProductDetail from '~/pages/ProductDetail'
+const publicRoutes = [
     {
         path: config.routes.products,
         component: Product,
@@ -41,6 +36,6 @@ const puplicRoutes = [
         path: config.routes.detail,
         component: ProductDetail,
     },
-];
-const privateRoutes = [];
-export { puplicRoutes, privateRoutes };
+]
+const privateRoutes = []
+export { publicRoutes, privateRoutes }

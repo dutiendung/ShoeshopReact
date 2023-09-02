@@ -41,15 +41,18 @@
 .buttonSearch {
     height: 100px;
 }
+.searchResult {
+    min-height: 200px;
+    transition: all ease 1s;
+}
 .resultItem {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 20px;
-}
-.searchResult .resultItem {
     margin-left: -27px;
 }
+
 .totalResult {
     display: flex;
     justify-content: center;

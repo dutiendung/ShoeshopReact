@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
-import style from './Register.module.scss';
-const cx = classNames.bind(style);
+import classNames from 'classnames/bind'
+import { Link } from 'react-router-dom'
+import style from './Register.module.scss'
+const cx = classNames.bind(style)
 function Register() {
     return (
         <div className={cx('wrapper')}>
@@ -18,7 +17,7 @@ function Register() {
                 Bạn đã có tài khoản? <Link to={'/login'}>Đăng nhập</Link>
             </div>
         </div>
-    );
+    )
 }
 
-export default Register;
+export default Register

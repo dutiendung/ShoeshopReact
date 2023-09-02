@@ -1,15 +1,15 @@
-import { faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classNames from 'classnames/bind'
+import { Link } from 'react-router-dom'
 
-import style from './ProductCard.module.scss';
-const cx = classNames.bind(style);
+import style from './ProductCard.module.scss'
+const cx = classNames.bind(style)
 function ProductCard({ data = {} }) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('imgProduct')}>
-                <img src={data.image} />
+                <img src={data.image} alt={data.title} />
             </div>
             <div className={cx('action')}>
                 <div className={cx('addToCart')}>
@@ -35,7 +35,7 @@ function ProductCard({ data = {} }) {
                 </span>
             </div>
         </div>
-    );
+    )
 }
 
-export default ProductCard;
+export default ProductCard

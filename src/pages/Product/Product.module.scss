@@ -15,14 +15,36 @@
     display: flex;
 }
 .productFilter {
-    width: 300px;
+    width: 30%;
 }
+.sort {
+    text-align: right;
+    margin-bottom: 15px;
+
+    button {
+        font-size: 15px;
+        padding: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        border: 1px solid #000;
+        background-color: #fff;
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
+.sort .active {
+    background-color: #000;
+    color: #fff;
+}
+
 .productList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-height: 400px;
 }
+
 .pagination {
     margin-bottom: 50px;
 }

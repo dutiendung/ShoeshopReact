@@ -25,3 +25,27 @@ body {
     line-height: 1.5;
     text-rendering: optimizespeed;
 }
+
+// Active navigation
+.active {
+    padding-bottom: 3px;
+    border-bottom: 3px var(--primary) solid;
+}
+
+//Custom slider
+.slick-prev {
+    left: 0.5% !important;
+    z-index: 1;
+}
+.slick-prev::before {
+    color: #ccc !important;
+    font-size: 3rem !important;
+}
+.slick-next {
+    right: 2% !important;
+    z-index: 1;
+}
+.slick-next::before {
+    color: #ccc !important;
+    font-size: 3rem !important;
+}

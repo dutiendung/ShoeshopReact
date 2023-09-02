@@ -1,23 +1,23 @@
-import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
-import style from './ColorFilter.module.scss';
-const cx = classNames.bind(style);
-function ColorFilter({ onChange }) {
-    const [colors, setColors] = useState([]);
-    const colorList = ['trắng', 'đen', 'đỏ', 'hồng', 'vàng', 'xanh'];
+import classNames from 'classnames/bind'
+import { useEffect, useState } from 'react'
+import style from './ColorFilter.module.scss'
+const cx = classNames.bind(style)
+function ColorFilter({ onChangeColor }) {
+    const [colors, setColors] = useState([])
+    const colorList = ['trắng', 'đen', 'đỏ', 'hồng', 'vàng', 'xanh']
 
     const handleSizeChange = (size) => {
         setColors((prev) => {
             if (colors.includes(size)) {
-                return prev.filter((x) => x !== size);
+                return prev.filter((x) => x !== size)
             } else {
-                return [...prev, size];
+                return [...prev, size]
             }
-        });
-    };
+        })
+    }
     useEffect(() => {
-        onChange(colors);
-    }, [colors]);
+        onChangeColor(colors)
+    }, [colors])
     return (
         <div className={cx('wrapper')}>
             {colorList.map((color) => {
@@ -32,10 +32,10 @@ function ColorFilter({ onChange }) {
                         {'  '}
                         {`Màu ${color}`}
                     </label>
-                );
+                )
             })}
         </div>
-    );
+    )
 }
 
-export default ColorFilter;
+export default ColorFilter

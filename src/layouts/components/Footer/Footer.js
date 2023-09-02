@@ -1,19 +1,19 @@
-import classNames from 'classnames/bind';
+import classNames from 'classnames/bind'
 
-import style from './Footer.module.scss';
-import logoMomo from '~/assets/img-footer/methodPayment/momo.png';
-import logoVisa from '~/assets/img-footer/methodPayment/visa.jpg';
-import logoMastercard from '~/assets/img-footer/methodPayment/mastercard.png';
-import logoVnpay from '~/assets/img-footer/methodPayment/vnpay.png';
-import logoZalopay from '~/assets/img-footer/methodPayment/zalopay.png';
 import {
+    faEnvelope,
     faLocationDot,
     faPhone,
-    faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import logoMastercard from '~/assets/img-footer/methodPayment/mastercard.png'
+import logoMomo from '~/assets/img-footer/methodPayment/momo.png'
+import logoVisa from '~/assets/img-footer/methodPayment/visa.jpg'
+import logoVnpay from '~/assets/img-footer/methodPayment/vnpay.png'
+import logoZalopay from '~/assets/img-footer/methodPayment/zalopay.png'
+import style from './Footer.module.scss'
 
-const cx = classNames.bind(style);
+const cx = classNames.bind(style)
 function Footer() {
     return (
         <div className={cx('wrapper')}>
@@ -81,7 +81,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Footer;
+export default Footer
